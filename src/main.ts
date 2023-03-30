@@ -11,6 +11,7 @@ class Grocery {
 		this.status = false;
 
 		this.AddGroceries()
+		this.DeleteGrocery()
 	}
 
 	AddGroceries() {
@@ -40,7 +41,20 @@ class Grocery {
 				this.addGroceryItem.insertAdjacentHTML('beforeend', newItem);
 				this.addGrocery.value = '';
 				value = ''
+
+				this.DeleteGrocery()
 			}
+		})
+	}
+
+	DeleteGrocery() {
+		const lis = document.querySelectorAll<HTMLElement>('.list')
+		const deleteBtns = document.querySelectorAll<HTMLElement>('.delete')
+
+		deleteBtns.forEach((btn, index) => {
+			btn.addEventListener('click', () => {
+				lis[index].remove()
+			})
 		})
 	}
 }
