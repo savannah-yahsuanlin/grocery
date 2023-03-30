@@ -5,9 +5,9 @@ class Grocery {
 	status: boolean
 		
 	constructor(props:any) {
-		this.addGrocery = document.querySelector(props.inputhook) as HTMLElement
+		this.addGrocery = document.querySelector(props.input) as HTMLElement
 		this.createGrocery = document.querySelector(props.submit) as HTMLElement
-		this.addGroceryItem = document.querySelector(props.showTarget) as HTMLElement
+		this.addGroceryItem = document.querySelector(props.show) as HTMLElement
 		this.status = false;
 
 		this.AddGroceries()
@@ -26,16 +26,13 @@ class Grocery {
 		this.createGrocery.addEventListener('click', (e:any):void => {
 			e.preventDefault();
 
-			if(!value.trim()) {
+			if(!value) {
 				return null
 			} else {
 				const newItem = `
 					<li class="list">
-						<p class="content">${value}</p>
-						<div class="buttonGroup">
-							<button class="edit btn">Edit</button>
-							<button class="delete btn">Delete</button>
-						</div>
+						<p>${value}</p>
+						<button class="delete">Delete</button>
 					</li>
 				`
 				this.addGroceryItem.insertAdjacentHTML('beforeend', newItem);
@@ -60,7 +57,7 @@ class Grocery {
 }
 
 const newGrocery= new Grocery({
-    inputhook : '.addTodo',
-    submit : '.submit',
-    showTarget : '.todoList'
+    input: '.addTodo',
+    submit: '.submit',
+    show: '.todoList'
 });
