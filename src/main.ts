@@ -2,13 +2,11 @@ class Grocery {
 	addGrocery: any
 	createGrocery: any
 	addGroceryItem: any
-	status: boolean
 		
 	constructor(props:any) {
 		this.addGrocery = document.querySelector(props.input) as HTMLElement
 		this.createGrocery = document.querySelector(props.submit) as HTMLElement
 		this.addGroceryItem = document.querySelector(props.show) as HTMLElement
-		this.status = false;
 
 		this.AddGroceries()
 		this.DeleteGrocery()
