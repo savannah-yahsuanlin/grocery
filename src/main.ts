@@ -55,7 +55,7 @@ class Grocery {
 }
 
 const newGrocery= new Grocery({
-    input: '.addTodo',
+    input: '.addGrocery',
     submit: '.submit',
-    show: '.todoList'
+    show: '.lists'
 });
