@@ -2,9 +2,9 @@
   "name": "grocery",
   "version": "1.0.0",
   "description": "",
-  "main": "webpack.config.js",
   "scripts": {
-    "start": "webpack -w"
+    "build": "webpack",
+    "watch": "webpack -w"
   },
   "keywords": [],
   "author": "",
