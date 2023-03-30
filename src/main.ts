@@ -24,19 +24,20 @@ class Grocery {
 	addGroceryList(value:string) {
 		this.createGrocery.addEventListener('click', (e:any):void => {
 			e.preventDefault();
+
 			if(!value.trim()) {
 				return null
 			} else {
 				const newItem = `
-					<li class='list'>
-						<p class='content'>${value}</p>
-						<div class='buttonGroup'>
-							<button class='edit btn'>Edit</button>
-							<button class='delete btn'>Delete</button>
+					<li class="list">
+						<p class="content">${value}</p>
+						<div class="buttonGroup">
+							<button class="edit btn">Edit</button>
+							<button class="delete btn">Delete</button>
 						</div>
 					</li>
 				`
-				this.addGroceryItem?.insertAdjacentElement('beforeend', newItem);
+				this.addGroceryItem.insertAdjacentHTML('beforeend', newItem);
 				this.addGrocery.value = '';
 				value = ''
 			}
@@ -47,5 +48,5 @@ class Grocery {
 const newGrocery= new Grocery({
     inputhook : '.addTodo',
     submit : '.submit',
-    showTarget : '.todolist'
+    showTarget : '.todoList'
 });
