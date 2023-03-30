@@ -31,7 +31,7 @@ class Grocery {
 			} else {
 				const newItem = `
 					<li class="list">
-						<p>${value}</p>
+						${value}
 						<button class="delete">Delete</button>
 					</li>
 				`
